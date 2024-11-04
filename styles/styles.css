@@ -10,11 +10,43 @@
     transition: transform 0.5s ease-out;
     z-index: -1;
 }
+.moving-image {
+    position: fixed;
+    top: 50%;
+    width: 50%;
+    height: 100%;
+    transition: transform 0.5s ease-out;
+}
+
+#left-image {
+    left: 0;
+    transform: translateY(-50%);
+}
+#right-image {
+    right: 0;
+    transform: translateY(-50%);
+}
 
 
 /* Media Queries */
 @media (max-width: 768px) {
     .background-image {
         background-position: center;
+    }
+    .moving-image {
+        width: 60%;
+    }
+    #left-image,
+    #right-image {
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+    
+    #left-image {
+        left: -45%;
+    }
+    
+    #right-image {
+        right: -45%;
     }
 }
