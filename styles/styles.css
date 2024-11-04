@@ -10,3 +10,11 @@
     transition: transform 0.5s ease-out;
     z-index: -1;
 }
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .background-image {
+        background-position: center;
+    }
+}
