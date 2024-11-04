@@ -3,13 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lovelace Digital Arts</title>
-    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Parallax Scroll</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            min-height: 200vh;
+            position: relative;
+        }
+
+        /* Contenedor del fondo */
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .background-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 1200px;
+            height: 400px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .image {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            transition: transform 0.1s ease-out;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Contenedor para el scroll */
+        .scroll-content {
+            height: 200vh; /* Altura para permitir scroll */
+            width: 100%;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            .container {
+                height: 300px;
+            }
+
+            .image {
+                width: 200px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                height: 200px;
+            }
+
+            .image {
+                width: 150px;
+                height: 100px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="background-image"></div>
-    <img src="./img/Sin título-1.png" alt="logo" id="logo">
+    <!-- Contenedor del fondo -->
+    <div class="background-container">
+        <img class="background-image" src="./img/IMAGEN DE FONDO.jpg" alt="Fondo">
+    </div>
 
+    <!-- Contenedor principal -->
     <div class="container">
         <div class="image" id="leftImage">
             <img src="./img/SUPERPOSICIÓN IZQ.png" alt="Imagen izquierda">
@@ -18,7 +113,9 @@
             <img src="./img/SUPERPOSICIÓN DER.png" alt="Imagen derecha">
         </div>
     </div>
-    
+
+    <!-- Contenedor para permitir scroll -->
+    <div class="scroll-content"></div>
 
     <script>
         const leftImage = document.getElementById('leftImage');
