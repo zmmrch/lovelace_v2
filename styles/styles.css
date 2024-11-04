@@ -1,9 +1,9 @@
 body, html {
     margin: 0;
     padding: 0;
-    height: 160vh; /* Aumentamos la altura para permitir más scroll */
+    /* height: 160vh; 
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: hidden; */
 }
 
 .background-image {
