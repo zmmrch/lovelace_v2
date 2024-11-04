@@ -8,8 +8,34 @@
 </head>
 <body>
     <div class="background-image"></div>
-    <img src="./img/SUPERPOSICIÓN IZQ.png" alt="Imagen izquierda" loading="lazy" class="moving-image" id="left-image">
-    <img src="./img/SUPERPOSICIÓN DER.png" alt="Imagen derecha" loading="lazy" class="moving-image" id="right-image">
+    <img src="./img/Sin título-1.png" alt="logo" id="logo">
+
+    <div class="container">
+        <div class="image" id="leftImage">
+            <img src="./img/SUPERPOSICIÓN IZQ.png" alt="Imagen izquierda">
+        </div>
+        <div class="image" id="rightImage">
+            <img src="./img/SUPERPOSICIÓN DER.png" alt="Imagen derecha">
+        </div>
+    </div>
     
+
+    <script>
+        const leftImage = document.getElementById('leftImage');
+        const rightImage = document.getElementById('rightImage');
+        const maxMove = 50; // Porcentaje máximo de movimiento
+
+        window.addEventListener('scroll', () => {
+            // Calcula el porcentaje de scroll
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            
+            // Limita el movimiento al 50% del scroll
+            const movePercent = Math.min(scrollPercent, maxMove);
+            
+            // Mueve las imágenes
+            leftImage.style.transform = `translateX(-${movePercent}%)`;
+            rightImage.style.transform = `translateX(${movePercent}%)`;
+        });
+    </script>
 </body>
 </html>
