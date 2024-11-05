@@ -100,12 +100,12 @@
     }
     
     #logo {
-      width: 50%;
+      width: 70%;
     }
     
-    .container {
+    /* .container {
       flex-direction: column;
-    }
+    } */
     
     .card {
       width: 100%;
@@ -126,21 +126,18 @@
     }
     
     /* Tarjetas con propiedades comunes */
-    [id^="tarjeta_"] {
-      align-items: center;
-    }
-    
+        
     #tarjeta_portfolio {
-      width: 45%;
+      width: 120%;
       padding-left: 20%;
     }
     
     #tarjeta_servicios {
-      width: 40%;
+      width: 100%;
     }
     
     #tarjeta_hablemos {
-      width: 30%;
+      width: 80%;
     }
   }
   
