@@ -1,143 +1,63 @@
-/* Variables CSS para mejor mantenibilidad */
-:root {
-    --chevron-size: 28px;
-    --chevron-thickness: 8px;
-    --text-color: #fff;
-    --animation-duration: 3s;
-    --container-size: 24px;
-  }
-  
-  /* Scroll Down Animation */
-  .container-chevrons {
-    position: fixed;
-    inset: auto auto 15% 8%;
-    width: var(--container-size);
-    height: var(--container-size);
-  }
-  
-  .chevron {
-    position: absolute;
-    width: var(--chevron-size);
-    height: var(--chevron-thickness);
-    opacity: 0;
-    transform: scale3d(0.5, 0.5, 0.5);
-    animation: move var(--animation-duration) ease-out infinite;
-  }
-  
-  .chevron:nth-child(1) {
-    animation-delay: 1s;
-  }
-  
-  .chevron:nth-child(2) {
-    animation-delay: 2s;
-  }
-  
-  .chevron::before,
-  .chevron::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 51%;
-    background: var(--text-color);
-  }
-  
-  .chevron::before {
-    left: 0;
-    transform: skew(0deg, 30deg);
-  }
-  
-  .chevron::after {
-    right: 0;
-    width: 50%;
-    transform: skew(0deg, -30deg);
-  }
-  
-  @keyframes move {
-    25% {
-      opacity: 1;
-    }
-    33% {
-      opacity: 1;
-      transform: translateY(30px);
-    }
-    67% {
-      opacity: 1;
-      transform: translateY(40px);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
-    }
-  }
-  
-  .text {
-    display: block;
-    margin: 75px 0 0 -30px;
-    font-family: system-ui, -apple-system, "Helvetica Neue", sans-serif;
-    font-size: 0.75rem;
-    color: var(--text-color);
-    text-transform: uppercase;
-    white-space: nowrap;
-    opacity: 0.25;
-    animation: pulse 2s linear alternate infinite;
-  }
-  
-  @keyframes pulse {
-    to {
-      opacity: 1;
-    }
-  }
-  
-  /* Media Queries */
-  @media (max-width: 768px) {
-    .background-image {
-      background-position: center;
-    }
-    
-    .moving-image {
-      width: 60%;
-    }
-    
-    #logo {
-      width: 70%;
-    }
-    
-    /* .container {
-      flex-direction: column;
-    } */
-    
-    .card {
+body,
+html{
+      margin: 0;
+      padding: 0;
+      height: 100%;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+svg {
+      display: block;
       width: 100%;
-    }
-    
-    #left-image,
-    #right-image {
-      width: 100%;
-      aspect-ratio: 16/9;
-    }
-    
-    #left-image {
-      left: -45%;
-    }
-    
-    #right-image {
-      right: -45%;
-    }
-    
-    /* Tarjetas con propiedades comunes */
-        
-    #tarjeta_portfolio {
-      width: 120%;
-      padding-left: 20%;
-    }
-    
-    #tarjeta_servicios {
-      width: 100%;
-    }
-    
-    #tarjeta_hablemos {
-      width: 80%;
-    }
-  }
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+}
   
+.scrollElement {
+      position: absolute;
+      height: 6000px;
+      width: 100px;
+      top: 0;
+      z-index: 0;
+}
+
+  .btn {
+      position: fixed;
+      bottom: 5%;
+      right: 0px;
+      transform: translateX(-50%);
+      border: 1px solid #fff;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      padding: 0.5rem 0.7em;
+      background-color: transparent;
+      color: #ffffff;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      cursor: pointer;
+      transition: all .3s;
+      z-index: 11;
+  }
+
+  .btn_works {
+      left: 100px;
+      right: unset;
+      text-decoration: none;
+  }
+
+  .btn:hover {
+      background: #ffffff;
+      color: #1B1734;
+  }
