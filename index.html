@@ -41,31 +41,23 @@
             left: 0;
         }
 
-        .container {
+        .image {
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-            max-width: 1200px;
-            height: 400px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1;
+            top: 0%;
+            left: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            transition: transform 0.5s ease-out;
         }
 
-        .image {
-            width: 300px;
-            height: 200px;
-            position: relative;
-            transition: transform 0.1s ease-out;
-        }
 
         .image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: fill;
+            position: absolute;
+            top: 0;
         }
 
         /* Contenedor para el scroll */
@@ -103,15 +95,15 @@
     <div class="background-container">
         <img class="background-image" src="./img/IMAGEN DE FONDO.jpg" alt="Fondo">
     </div>
-
+    <div class="image" id="leftImage">
+        <img src="./img/SUPERPOSICIÓN IZQ.png" alt="Imagen izquierda">
+    </div>
+    <div class="image" id="rightImage">
+        <img src="./img/SUPERPOSICIÓN DER.png" alt="Imagen derecha">
+    </div>
     <!-- Contenedor principal -->
     <div class="container">
-        <div class="image" id="leftImage">
-            <img src="./img/SUPERPOSICIÓN IZQ.png" alt="Imagen izquierda">
-        </div>
-        <div class="image" id="rightImage">
-            <img src="./img/SUPERPOSICIÓN DER.png" alt="Imagen derecha">
-        </div>
+        
     </div>
 
     <!-- Contenedor para permitir scroll -->
